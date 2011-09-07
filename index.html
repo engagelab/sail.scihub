@@ -1,0 +1,28 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+    <title>Science Hub</title> 
+    
+    <script type="text/javascript">
+        Sail.load()
+            .then('js/scihub.js')
+            .thenRun(function() { 
+                return Sail.init(SciHub) 
+            })
+    </script>
+</head>
+<body>
+    <header>
+        SciHub
+    </header>
+    
+    <div id="connecting">
+        <img src="loader.gif" />
+        <p>Connecting...</p>
+    </div>
+
+    <footer> 
+    </footer> 
+      
+</body>
+</html>
