@@ -3,8 +3,11 @@
 <head> 
     <title>Science Hub</title> 
     
+    <script src="js/sail.js/sail.js" type="text/javascript"></script> 
+    
     <script type="text/javascript">
         Sail.load()
+            .then('js/sail.js/rollcall.js')
             .then('js/scihub.js')
             .thenRun(function() { 
                 return Sail.init(SciHub) 
@@ -20,7 +23,18 @@
         <img src="loader.gif" />
         <p>Connecting...</p>
     </div>
-
+    
+    <div id="view">
+    	<button class="upload-video-button">Upload video</button>
+    </div>
+    
+<!--     <div class="video-list">
+       <script 
+    		type="text/javascript" 
+    		src="http://gdata.youtube.com/feeds/users/encoresignup/uploads?alt=json-in-script&format=5&callback=showMyVideos">
+		</script>
+    </div>
+ -->
     <footer> 
     </footer> 
       
