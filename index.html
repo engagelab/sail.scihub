@@ -78,8 +78,9 @@ function showAllVideos(data) {
         <p>Connecting...</p>
     </div>
 
+<!-- ************************************************************************************************** -->
+
     <div id="view">
-    	<button class="upload-screen-button">Upload video</button>
 
 		<div id="playerContainer" style="width: 20em; height: 180px; float: left;">
 	    	<object id="player"></object>
@@ -91,7 +92,9 @@ function showAllVideos(data) {
 	    		src="http://gdata.youtube.com/feeds/users/encoresignup/uploads?alt=json-in-script&format=5&callback=showAllVideos">
 			</script>
 	    </div>
-
+	    <br/><br/><br/><br/>
+	    
+    	<button class="upload-screen-button" style="float:right">Upload new video</button>
     </div>
     
     
@@ -99,25 +102,21 @@ function showAllVideos(data) {
     
     
 	<div id="add">
-		<button class="browse-button">Browse...</button>
-
 		
 		<div class="title-form-field"> 
 			<h5>Title</h5> 
 			<textarea rows="1" cols="45" class="text-box title"></textarea> 							
 		</div>
-
-		<button class="back-button">Back</button>
-		<button class="upload-button">Upload video</button>
 		<br/>
-		
+		<div class="action-buttons">
+			<button class="upload-button">Upload video</button>
+			<button class="browse-button">Browse...</button>
+			<br/><br/><br/>			
+			<button class="back-button">Back</button>
+		</div>
+
 	</div>
 
-
-
-
-
-<!-- AI39si5IM0aBn_mE7Wgj3brs9Zf-ttNoW1l2fse2xx71oYYOtzNxpK0NDrc7bZpjz8jTdh90HMRaGFwHemSeDd1tDZccwDEthA -->
 
     <footer> 
     </footer> 
