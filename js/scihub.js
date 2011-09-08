@@ -1,7 +1,7 @@
 SciHub = {
     rollcallURL: '/rollcall', //'http://rollcall.proto.encorelab.org',
-    xmppDomain: 'proto.encorelab.org',
-    groupchatRoom: null,
+    xmppDomain: 'imediamac28.uio.no',
+    groupchatRoom: 'scihub@conference.imediamac28.uio.no',
     
     init: function() {
         console.log("Initializing...")
