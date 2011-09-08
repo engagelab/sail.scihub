@@ -71,14 +71,33 @@ SciHub = {
             $('#username').text(session.account.login)
       	    //$('#connecting').hide()						
         	
+            
+            
+            
+            //init VIEW screen
+            
             $('#view .upload-screen-button').click(function() {
             	$('#view').hide()
             	$('#add').show()
             })
             
-                         
-        },
-        
+            
+
+            //init ADD screen
+            
+            $('#add .upload-button').click(function() {
+            	//$('#add .title').val()
+            })
+            $('#add .browse-button').click(function() {
+            	//something
+            })
+            $('#add .back-button').click(function() {
+            	$('#add').hide()
+            	$('#view').show()
+            })
+            
+            
+        },        
 
         authenticated: function(ev) {
             $('#connecting').hide()            
