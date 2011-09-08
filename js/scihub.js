@@ -41,10 +41,7 @@ SciHub = {
         SciHub.rollcall = new Rollcall.Client(SciHub.rollcallURL)
         SciHub.token = SciHub.rollcall.getCurrentToken()
 
-        if (!SciHub.run) {
-            if ($.url.attr('file') != 'index.html')
-                window.location.href = "/index.html"
-        } else if (!SciHub.token) {
+        if (!SciHub.token) {
             Rollcall.Authenticator.requestLogin()
         } else {
             SciHub.rollcall.fetchSessionForToken(SciHub.token, function(data) {
