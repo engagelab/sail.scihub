@@ -63,6 +63,7 @@ SciHub = {
         
         initialized: function(ev) {
             SciHub.authenticate()
+            $('#add').hide()				//moved to here to get it to hide earlier, but it ain't working
         },
         
         connected: function(ev) {
@@ -70,20 +71,17 @@ SciHub = {
             $('#username').text(session.account.login)
       	    //$('#connecting').hide()						
         	
-            ///////////////////////////////MOVE THIS TO ITS OWN DIRECTORY ONCE IT GROWS///////////////////////////////////
-            $('#add').hide()
-            
-            $('#view .upload-video-button').click(function() {
-            	//some stuff
+            $('#view .upload-screen-button').click(function() {
+            	$('#view').hide()
+            	$('#add').show()
             })
             
                          
         },
         
-        
-        
+
         authenticated: function(ev) {
-            $('#connecting').hide()
+            $('#connecting').hide()            
         },
         
         logout: function(ev) {

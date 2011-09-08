@@ -31,7 +31,7 @@ function loadVideo(playerUrl, autoplay) {
       false, {allowfullscreen: 'true'});
 }
 
-function showMyVideos(data) {
+function showAllVideos(data) {
   var feed = data.feed;
   var entries = feed.entry || [];
   var html = ['<ul class="videos">'];
@@ -74,21 +74,39 @@ function showMyVideos(data) {
         <img src="loader.gif" />
         <p>Connecting...</p>
     </div>
-    
+
     <div id="view">
-    	<button class="upload-video-button">Upload video</button>
+    	<button class="upload-screen-button">Upload video</button>
+
+		<div id="playerContainer" style="width: 20em; height: 180px; float: left;">
+	    	<object id="player"></object>
+		</div>    
+	    
+	     <div id="videos">
+	       <script 
+	    		type="text/javascript" 
+	    		src="http://gdata.youtube.com/feeds/users/encoresignup/uploads?alt=json-in-script&format=5&callback=showAllVideos">
+			</script>
+	    </div>
+
     </div>
     
-	<div id="playerContainer" style="width: 20em; height: 180px; float: left;">
-    	<object id="player"></object>
-	</div>    
     
-     <div id="videos">
-       <script 
-    		type="text/javascript" 
-    		src="http://gdata.youtube.com/feeds/users/encoresignup/uploads?alt=json-in-script&format=5&callback=showMyVideos">
-		</script>
-    </div>
+<!-- ************************************************************************************************** -->    
+    
+    
+	<div id="add">
+	
+		<button class="upload-button">Upload video</button>
+		<button class="browse-button">Browse...</button>
+		
+		<div class="title-form-field"> 
+			<h5>Title</h5> 
+			<textarea rows="2" cols="45" class="text-box title"></textarea> 							
+		</div>
+	
+	</div>
+
 
     <footer> 
     </footer> 
