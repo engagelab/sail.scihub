@@ -28,13 +28,29 @@
     	<button class="upload-video-button">Upload video</button>
     </div>
     
-<!--     <div class="video-list">
+    <script type="text/javascript">
+        function showMyVideos(data) {
+	  	  var feed = data.feed;
+	  	  var entries = feed.entry || [];
+	  	  var html = ['<ul>'];
+	  	  for (var i = 0; i < entries.length; i++) {
+    	    var entry = entries[i];
+  		    var title = entry.title.$t;
+  	    	html.push('<li>', title, '</li>');
+  	  		}
+  	  html.push('</ul>');
+  	  document.getElementById('videos').innerHTML = html.join('');
+    }
+    </script> 
+    
+    
+     <div id="videos">
        <script 
     		type="text/javascript" 
     		src="http://gdata.youtube.com/feeds/users/encoresignup/uploads?alt=json-in-script&format=5&callback=showMyVideos">
 		</script>
     </div>
- -->
+
     <footer> 
     </footer> 
       
