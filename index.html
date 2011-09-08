@@ -58,6 +58,7 @@ function showAllVideos(data) {
     <script type="text/javascript">
         Sail.load()
             .then('js/sail.js/rollcall.js')
+            .then('js/sail.js/deps/jquery-sleepy-mongoose-0.0.2.js')
             .then('js/scihub.js')
             .thenRun(function() { 
                 return Sail.init(SciHub) 
