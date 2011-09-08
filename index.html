@@ -2,6 +2,56 @@
 <html> 
 <head> 
     <title>Science Hub</title> 
+
+
+<!-- //////////////////////// -->    
+    <style>
+.titlec {
+  font-size: small;
+}
+ul.videos li {
+  float: left;
+  width: 10em;
+  margin-bottom: 1em;
+}
+ul.videos
+{
+  margin-bottom: 1em;
+  padding-left : 0em;
+  margin-left: 0em;
+  list-style: none;
+}
+</style>
+<script type="text/javascript" src="http://swfobject.googlecode.com/svn/trunk/swfobject/swfobject.js"></script>
+<script type="text/javascript">
+function loadVideo(playerUrl, autoplay) {
+  swfobject.embedSWF(
+      playerUrl + '&rel=1&border=0&fs=1&autoplay=' + 
+      (autoplay?1:0), 'player', '290', '250', '9.0.0', false, 
+      false, {allowfullscreen: 'true'});
+}
+
+function showMyVideos(data) {
+  var feed = data.feed;
+  var entries = feed.entry || [];
+  var html = ['<ul class="videos">'];
+  for (var i = 0; i < entries.length; i++) {
+    var entry = entries[i];
+    var title = entry.title.$t.substr(0, 20);
+    var thumbnailUrl = entries[i].media$group.media$thumbnail[0].url;
+    var playerUrl = entries[i].media$group.media$content[0].url;
+    html.push('<li onclick="loadVideo(\'', playerUrl, '\', true)">',
+              '<span class="titlec">', title, '...</span><br /><img src="', 
+              thumbnailUrl, '" width="130" height="97"/>', '</span></li>');
+  }
+  html.push('</ul><br style="clear: left;"/>');
+  document.getElementById('videos').innerHTML = html.join('');
+  if (entries.length > 0) {
+    loadVideo(entries[0].media$group.media$content[0].url, false);
+  }
+}
+</script>
+<!-- //////////////////////// -->
     
     <script src="js/sail.js/sail.js" type="text/javascript"></script> 
     
@@ -28,21 +78,9 @@
     	<button class="upload-video-button">Upload video</button>
     </div>
     
-    <script type="text/javascript">
-        function showMyVideos(data) {
-	  	  var feed = data.feed;
-	  	  var entries = feed.entry || [];
-	  	  var html = ['<ul>'];
-	  	  for (var i = 0; i < entries.length; i++) {
-    	    var entry = entries[i];
-  		    var title = entry.title.$t;
-  	    	html.push('<li>', title, '</li>');
-  	  		}
-  	  html.push('</ul>');
-  	  document.getElementById('videos').innerHTML = html.join('');
-    }
-    </script> 
-    
+	<div id="playerContainer" style="width: 20em; height: 180px; float: left;">
+    	<object id="player"></object>
+	</div>    
     
      <div id="videos">
        <script 
