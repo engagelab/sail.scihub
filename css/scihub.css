@@ -12,7 +12,7 @@
   bottom: 0px;
 }
 
-.baloon {
+.balloon {
   position: absolute;
   padding: 8px;
   max-width: 40%;
@@ -41,7 +41,7 @@
   box-align: center;
 }
 
-.baloon .loader {
+.balloon .loader {
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-box-pack: center;
@@ -61,15 +61,15 @@
   width: 100%;
 }
 
-.baloon:hover {
+.balloon:hover {
   cursor: pointer;
 }
 
-.baloon .loader p {
+.balloon .loader p {
   margin-top: 0;
 }
 
-.baloon.video {
+.balloon.video {
   width: 180px;
   height: 180px;
 }

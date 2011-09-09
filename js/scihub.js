@@ -52,27 +52,27 @@ SciHub = {
     
     
     createVideoBaloon: function(data) {
-        baloon = $("<div class='baloon video'></div>")
+        balloon = $("<div class='balloon video'></div>")
         
         loader = $("<div class='loader'></div>")
         loader.append("<img src='loader.gif' />")
         loader.append("<p>Please wait...</p>")
         
-        baloon.append(loader)
+        balloon.append(loader)
         
-        baloon.attr('id', 'foo')
+        balloon.attr('id', 'foo')
         
-        //baloon.addClass('author-'+author.replace(/[^a-z0-9]/i, '-'))
+        //balloon.addClass('author-'+author.replace(/[^a-z0-9]/i, '-'))
         
-        baloon.hide()
+        balloon.hide()
         
         wall_height = $("#wall").height()
         wall_width = $("#wall").width()
         
-        baloon.css('left', (Math.random() * (wall_width - 100) + 'px'))
-        baloon.css('top', (Math.random() * (wall_height - 100) + 'px'))
+        balloon.css('left', (Math.random() * (wall_width - 100) + 'px'))
+        balloon.css('top', (Math.random() * (wall_height - 100) + 'px'))
         
-        // baloon.dblclick(function() {
+        // balloon.dblclick(function() {
         //     expl = $(this).find('.explanation')
         //     if ($(expl).is(':visible'))
         //         $(expl).hide('slide', {direction: 'up', duration: 'fast'})
@@ -80,17 +80,17 @@ SciHub = {
         //         $(expl).show('slide', {direction: 'up', duration: 'fast'})
         // })
         
-        $("#wall").append(baloon)
+        $("#wall").append(balloon)
         
-        baloon.show('puff', 'fast')
-        baloon.mousedown(function() {
-            zs = $('.baloon').map(function() {z = $(this).css('z-index'); return z == 'auto' ? 100 : parseInt(z)})
+        balloon.show('puff', 'fast')
+        balloon.mousedown(function() {
+            zs = $('.balloon').map(function() {z = $(this).css('z-index'); return z == 'auto' ? 100 : parseInt(z)})
             maxZ = Math.max.apply(Math, zs)
             $(this).css('z-index', maxZ + 1)
         })
         
-        baloon.draggable()
-        return baloon
+        balloon.draggable()
+        return balloon
     },
     
 
