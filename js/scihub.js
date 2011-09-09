@@ -99,7 +99,7 @@ SciHub = {
         sail: {
         	got_google_client_token: function(sev) {
         		url = sev.payload.url
-        		token = sev.payload.token                
+        		token = sev.payload.token
                 $('#submission-from').attr('action', url+"?nexturl="+document.location.href)
                 $('#token-value').val(token)
                 console.log(token)
@@ -120,19 +120,19 @@ SciHub = {
         	
             //init VIEW screen
             
-            $('#view .upload-screen-button').click(function() {
+            $('.upload-screen-button').click(function() {
             	sev = new Sail.Event('video_upload_requested',{})
             	SciHub.groupchat.sendEvent(sev)
-            	$('#view').hide()
-            	$('#add').show()
+            	//$('#view').hide()
+            	Sail.UI.showDialog("#add")
             })
             
 
             //init ADD screen
                         
             $('#add .back-button').click(function() {
-            	$('#add').hide()
-            	$('#view').show()
+            	Sail.UI.dismissDialog("#add")
+            	//$('#view').show()
             })
             
             
