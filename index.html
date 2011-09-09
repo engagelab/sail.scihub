@@ -124,13 +124,13 @@ function showAllVideos(data) {
 		  }
 		</script>
 		
-		<form id="submission-form" method="post" enctype="multipart/form-data" onsubmit="return checkForFile();">
+		<form id="submission-form" action="google.ca" method="post" enctype="multipart/form-data" onsubmit="return checkForFile();">
 			<input id="file" type="file" name="file"/>
 		  	<div id="errMsg" style="display:none;color:red">
 		    	You need to specify a file.
 		  	</div>
 			<input id="token-value" type="hidden" name="token" />
-			<input type="submit" value="Upload" />
+			<input type="submit" value="Upload" >
 		</form>
 		<br/><br/><br/><br/>
 		<button class="back-button">Back</button>

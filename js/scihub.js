@@ -98,14 +98,19 @@ SciHub = {
     events: {
         sail: {
         	got_google_client_token: function(sev) {
-        		url = sev.payload.url
+        		tokenURL = sev.payload.url
         		token = sev.payload.token
-                $('#submission-from').attr('action', url+"?nexturl="+document.location.href)
+                //$('#submission-from').attr('action', url+"?nexturl="+document.location.href)
+                $('#submission-form').get(0).setAttribute('action', tokenURL+"?nexturl="+document.location.href);
                 $('#token-value').val(token)
                 console.log(token)
-                console.log(url)
-
+                console.log(tokenURL)
+            },
+            video_ready: function(sev) {
+            	videoReadyURL = sev.payload.url
+            	//do some shit
             }
+   
         },
         
         initialized: function(ev) {
@@ -134,6 +139,16 @@ SciHub = {
             	Sail.UI.dismissDialog("#add")
             	//$('#view').show()
             })
+            id = document.location.href.match(/id=([^&]+)/)[1]
+            status = document.location.href.match(/status=([^&]+)/)[1]
+            test = 1
+            if (status == '200') {
+            	sev = new Sail.Event('video_uploaded',{
+            		id:id,
+            		status:status
+            	})
+            	SciHub.groupchat.sendEvent(sev)
+            }
             
             
         },        
