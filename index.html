@@ -108,12 +108,29 @@ function showAllVideos(data) {
 			<textarea rows="1" cols="45" class="text-box title"></textarea> 							
 		</div>
 		<br/>
-		<div class="action-buttons">
-			<button class="upload-button">Upload video</button>
-			<button class="browse-button">Browse...</button>
-			<br/><br/><br/>			
-			<button class="back-button">Back</button>
-		</div>
+		<br/>
+
+<!-- TEMP: checks that user has browsed for and selected the file -->
+		<script type="text/javascript">
+		  function checkForFile() {
+		    if (document.getElementById('file').value) {
+		      return true;
+		    }
+		    document.getElementById('errMsg').style.display = '';
+		    return false;
+		  }
+		</script>
+		
+		<form id="submissions-form" method="post" enctype="multipart/form-data" onsubmit="return checkForFile();">
+			<input id="file" type="file" name="file"/>
+		  	<div id="errMsg" style="display:none;color:red">
+		    	You need to specify a file.
+		  	</div>
+			<input id="token-value" type="hidden" name="token" />
+			<input type="submit" value="Upload" />
+		</form>
+		<br/><br/><br/><br/>
+		<button class="back-button">Back</button>
 
 	</div>
 
