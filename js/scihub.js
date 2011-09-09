@@ -51,7 +51,7 @@ SciHub = {
     },
     
     
-    createVideoBaloon: function(data) {
+    createVideoBalloon: function(url) {
         balloon = $("<div class='balloon video'></div>")
         
         loader = $("<div class='loader'></div>")
@@ -110,15 +110,15 @@ SciHub = {
         
         initialized: function(ev) {
             SciHub.authenticate()
-            $('#add').hide()				//moved to here to get it to hide earlier, but it ain't working
         },
         
         connected: function(ev) {
             SciHub.groupchat.join()
             $('#username').text(session.account.login)
-      	    //$('#connecting').hide()						
+      	    $('#connecting').hide()						
         	
             //init VIEW screen
+            
             
             $('.upload-screen-button').click(function() {
             	sev = new Sail.Event('video_upload_requested',{})
@@ -126,6 +126,8 @@ SciHub = {
             	//$('#view').hide()
             	Sail.UI.showDialog("#add")
             })
+            
+            $('.someElement').removeAttr('disabled');
             
 
             //init ADD screen

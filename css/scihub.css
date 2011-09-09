@@ -1,3 +1,14 @@
+#connecting {
+  position: absolute;
+  top: 40%;
+  left: 40%;
+  right: 40%;
+  text-align: center;
+  font-weight: bold;
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
 #youtube-uploader {
   width: 500px;
   height: 500px;
@@ -89,4 +100,8 @@
   left: 30%;
   right: 30%;
   padding: 10px;
+}
+
+#add input {
+  width: 100%;
 }

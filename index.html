@@ -99,16 +99,22 @@ function showAllVideos(data) {
         
     </div> -->
     
-    <button class="upload-screen-button">Upload New Video</button>
+    <button class="upload-screen-button" disabled="disabled">Upload New Video</button>
     
 <!-- ************************************************************************************************** -->    
     
     
 	<div id="add" class="widget-box" style="display: none">
+	    <div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix" style="padding: 4px; margin-left: -5px; margin-right: -5px; margin-top: -5px">
+	        <a href="#" class="ui-dialog-titlebar-close ui-corner-all" role="button" style="float: right">
+	           <span class="ui-icon ui-icon-closethick">close</span>
+	        </a>
+	        <span class="ui-dialog-title">Upload a New Video</span>
+	    </div>
 		
 		<div class="title-form-field"> 
 			<h5>Title</h5> 
-			<textarea rows="1" cols="45" class="text-box title"></textarea> 							
+			<input type="" rows="1" cols="45" class="text-box title" />				
 		</div>
 		<br/>
 		<br/>
