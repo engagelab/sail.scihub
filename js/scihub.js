@@ -97,7 +97,15 @@ SciHub = {
     
     events: {
         sail: {
-            
+        	got_google_client_token: function(sev) {
+        		url = sev.payload.url
+        		token = sev.payload.token                
+                $('submission-from').attr('action', url+"?nexturl="+document.location.href)
+                $('token-value').val('value', token)
+                console.log(token)
+                console.log(url)
+
+            }
         },
         
         initialized: function(ev) {
@@ -119,17 +127,7 @@ SciHub = {
             
 
             //init ADD screen
-            
-            $('#add .upload-button').click(function() {
-            	//$('#add .title').val()
-            	sev = new Sail.Event('video_upload_requested',{ })
-            	SciHub.groupchat.sendEvent(sev)
-            })
-            
-            
-            $('#add .browse-button').click(function() {
-            	//something
-            })
+                        
             $('#add .back-button').click(function() {
             	$('#add').hide()
             	$('#view').show()
