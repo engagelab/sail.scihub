@@ -100,8 +100,8 @@ SciHub = {
         	got_google_client_token: function(sev) {
         		url = sev.payload.url
         		token = sev.payload.token                
-                $('submission-from').attr('action', url+"?nexturl="+document.location.href)
-                $('token-value').val('value', token)
+                $('#submission-from').attr('action', url+"?nexturl="+document.location.href)
+                $('#token-value').val(token)
                 console.log(token)
                 console.log(url)
 
@@ -121,6 +121,8 @@ SciHub = {
             //init VIEW screen
             
             $('#view .upload-screen-button').click(function() {
+            	sev = new Sail.Event('video_upload_requested',{})
+            	SciHub.groupchat.sendEvent(sev)
             	$('#view').hide()
             	$('#add').show()
             })
