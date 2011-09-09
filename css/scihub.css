@@ -75,7 +75,7 @@
 }
 
 .upload-screen-button {
-  position: absolute;
+  position: absolute !important;
   right: 6px;
   top: 60px;
 }
