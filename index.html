@@ -82,22 +82,19 @@ function showAllVideos(data) {
 
 <!-- ************************************************************************************************** -->
 
-    <!-- <div id="view">
+    <div id="player">
 
         <div id="playerContainer" style="width: 20em; height: 180px; float: left;">
             <object id="player"></object>
         </div>    
         
          <div id="videos">
-           <script 
-                type="text/javascript" 
-                src="http://gdata.youtube.com/feeds/users/encoresignup/uploads?alt=json-in-script&format=5&callback=showAllVideos">
-            </script>
+           <script id="script-source" type="text/javascript" ></script>
+<!--                 src="http://gdata.youtube.com/feeds/users/encoresignup/uploads?alt=json-in-script&format=5&callback=showAllVideos"> -->
         </div>
-        <br/><br/><br/><br/>
         
         
-    </div> -->
+    </div>
     
     <button class="upload-screen-button" style="display: none">Upload New Video</button>
     
@@ -138,8 +135,7 @@ function showAllVideos(data) {
 			<input id="token-value" type="hidden" name="token" />
 			<input type="submit" value="Upload" >
 		</form>
-		<br/><br/><br/><br/>
-		<button class="back-button">Back</button>
+
 
 	</div>
 
