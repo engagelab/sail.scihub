@@ -74,6 +74,12 @@
   height: 180px;
 }
 
+.upload-screen-button {
+  position: absolute;
+  right: 6px;
+  top: 60px;
+}
+
 #add {
   padding-left: 20px;
   padding-right: 20px;
