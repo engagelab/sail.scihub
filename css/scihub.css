@@ -3,3 +3,73 @@
   height: 500px;
   position: absolute;
 }
+
+#wall {
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+}
+
+.baloon {
+  position: absolute;
+  padding: 8px;
+  max-width: 40%;
+  max-height: 80%;
+  overflow: hidden;
+  border-radius: 15px;
+  background-color: rgba(256,256,256,0.7);
+  box-shadow: rgba(0,0,128,0.25) 3px 3px 4px;
+  
+  color: white;
+  font-size: 10pt;
+  
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-pack: center;
+  -webkit-box-align: center;
+  
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-pack: center;
+  -moz-box-align: center;
+  
+  display: box;
+  box-orient: horizontal;
+  box-pack: center;
+  box-align: center;
+}
+
+.baloon .loader {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-pack: center;
+  -webkit-box-align: center;
+  
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-pack: center;
+  -moz-box-align: center;
+  
+  display: box;
+  box-orient: vertical;
+  box-pack: center;
+  box-align: center;
+  
+  height: 100%;
+  width: 100%;
+}
+
+.baloon:hover {
+  cursor: pointer;
+}
+
+.baloon .loader p {
+  margin-top: 0;
+}
+
+.baloon.video {
+  width: 180px;
+  height: 180px;
+}
