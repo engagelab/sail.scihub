@@ -137,10 +137,7 @@ SciHub = {
 
             //init ADD screen
                         
-            $('#add .back-button').click(function() {
-            	Sail.UI.dismissDialog("#add")
-            	//$('#view').show()
-            })
+
             id = document.location.href.match(/id=([^&]+)/)[1]
             status = document.location.href.match(/status=([^&]+)/)[1]
             test = 1
