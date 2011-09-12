@@ -51,8 +51,8 @@ SciHub = {
     },
     
     
-    createVideoBalloon: function(url) {
-        balloon = $("<div class='balloon video'></div>")
+    createVideoBalloon: function(token) {
+        balloon = $("<div class='balloon video' ></div>")
         
         loader = $("<div class='loader'></div>")
         loader.append("<img src='loader.gif' />")
@@ -60,7 +60,7 @@ SciHub = {
         
         balloon.append(loader)
         
-        balloon.attr('id', 'foo')
+        balloon.addClass('token-' + token)
         
         //balloon.addClass('author-'+author.replace(/[^a-z0-9]/i, '-'))
         
@@ -100,15 +100,21 @@ SciHub = {
         	got_google_client_token: function(sev) {
         		tokenURL = sev.payload.url
         		token = sev.payload.token
-                //$('#submission-from').attr('action', url+"?nexturl="+document.location.href)
-                $('#submission-form').get(0).setAttribute('action', tokenURL+"?nexturl="+document.location.href);
+                //$('#submission-form').attr('action', url+"?nexturl="+document.location.href)
+        		nexturl = escape(document.location.href + '#token='+token)
+                $('#submission-form').get(0).setAttribute('action', tokenURL+"?nexturl="+nexturl);
                 $('#token-value').val(token)
                 console.log(token)
                 console.log(tokenURL)
+                Sail.app.createVideoBalloon(token)
+                console.log("video created")
             },
             video_ready: function(sev) {
             	videoReadyURL = sev.payload.url
-            	//do some shit
+            	token = sev.payload.token
+            	
+            	console.log(videoReadyURL)
+            	$('.token-'+token+' .loader').remove()
             }
    
         },
@@ -142,13 +148,28 @@ SciHub = {
             //init ADD screen
                         
 
-            id = document.location.href.match(/id=([^&]+)/)[1]
-            status = document.location.href.match(/status=([^&]+)/)[1]
-            test = 1
+
+            id = ''
+            idMatch = document.location.href.match(/id=([^&]+)/)
+            if (idMatch)
+            	id = idMatch[1]
+
+            status = ''
+            statusMatch = document.location.href.match(/status=([^&]+)/)
+            if (statusMatch)
+            	status = statusMatch[1]
+            
+            token = ''
+            tokenMatch = document.location.href.match(/token=([^#]+)/)
+            if (tokenMatch)
+            	token = tokenMatch[1]
+
+
             if (status == '200') {
             	sev = new Sail.Event('video_uploaded',{
             		id:id,
-            		status:status
+            		status:status,
+            		token:token
             	})
             	SciHub.groupchat.sendEvent(sev)
             }
