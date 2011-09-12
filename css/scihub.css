@@ -102,6 +102,26 @@
   padding: 10px;
 }
 
+#add .ui-dialog-titlebar {
+  padding: 4px; 
+  margin-left: -5px; 
+  margin-right: -5px; 
+  margin-top: -5px
+  margin-bottom: -10px;
+}
+
 #add input {
   width: 100%;
+}
+
+#add h5 {
+  margin-bottom: 0;
+}
+
+#add .title-form-field {
+  margin-bottom: 0.5em;
+}
+
+#add input[type=file] {
+  margin-bottom: 1.5em;
 }
