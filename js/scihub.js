@@ -112,7 +112,8 @@ SciHub = {
         	got_google_client_token: function(sev) {
         		tokenURL = sev.payload.url
         		token = sev.payload.token
-        		nexturl = escape(document.location.href + '#token='+token)
+        		
+        		nexturl = escape(document.location.href.replace(/\?.*/,'') + '#token='+token)
         		$('#submission-form').attr('action', tokenURL+"?nexturl="+nexturl)        		
                 //$('#submission-form').get(0).setAttribute('action', tokenURL+"?nexturl="+nexturl);
                 $('#token-value').val(token)
