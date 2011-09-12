@@ -1,0 +1,12 @@
+download from git
+
+git submodule init
+git submodule update
+
+get node 
+brew update
+brew install node
+curl http://npmjs.org/install.sh | sh
+npm install http-proxy@0.5.11
+npm install node-static
+node server.js
