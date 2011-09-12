@@ -10,3 +10,11 @@ curl http://npmjs.org/install.sh | sh
 npm install http-proxy@0.5.11
 npm install node-static
 node server.js
+
+
+/Library/WebServer/Documents/s3/sail.scihub
+/etc/apache2/other/scihub.vhost.conf
+
+cd /Library/WebServer/Documents/s3/sail.scihub
+git pull origin master
+
