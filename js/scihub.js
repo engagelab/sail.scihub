@@ -50,16 +50,21 @@ SciHub = {
         }
     },
     
+    createVideoPlayer: function(url) {
+        player = $("<object class='player'></object>")
+        player.append("<param name='movie' value='"+url+"'></param>")
+        player.append("<param name='allowFullScreen' value='true'></param>")
+        player.append("<param name='allowScriptAccess' value='always'></param>")
+        player.append("<embed src='"+url+"' type='application/x-shockwave-flash' allowfullscreen='true' allowscriptaccess='always'></embed>")
+        
+        return player
+    },
     
     createVideoBalloon: function(token, url) {
         balloon = $("<div class='balloon video' ></div>")
         
         if (url) {
-            player = $("<object class='player'></object>")
-            player.append("<param name='movie' value='"+url+"'></param>")
-            player.append("<param name='allowFullScreen' value='true'></param>")
-            player.append("<param name='allowScriptAccess' value='always'></param>")
-            player.append("<embed src='"+url+"' type='application/x-shockwave-flash' allowfullscreen='true' allowscriptaccess='always'></embed>")
+            player = SciHub.createVideoPlayer(url)
             
             balloon.append(player)
         } else {
@@ -122,12 +127,16 @@ SciHub = {
                 Sail.app.createVideoBalloon(token)
                 console.log("video created")
             },
+            
             video_ready: function(sev) {
             	videoReadyURL = sev.payload.url
             	token = sev.payload.token
             	
             	console.log(videoReadyURL)
             	$('.token-'+token+' .loader').remove()
+            	
+            	player = SciHub.createVideoPlayer(videoReadyURL)
+            	$('.token-'+token).append(player)
             }
    
         },
