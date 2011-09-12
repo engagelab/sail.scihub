@@ -51,14 +51,25 @@ SciHub = {
     },
     
     
-    createVideoBalloon: function(token) {
+    createVideoBalloon: function(token, url) {
         balloon = $("<div class='balloon video' ></div>")
         
-        loader = $("<div class='loader'></div>")
-        loader.append("<img src='loader.gif' />")
-        loader.append("<p>Please wait...</p>")
+        if (url) {
+            player = $("<object class='player'></object>")
+            player.append("<param name='movie' value='"+url+"'></param>")
+            player.append("<param name='allowFullScreen' value='true'></param>")
+            player.append("<param name='allowScriptAccess' value='always'></param>")
+            player.append("<embed src='"+url+"' type='application/x-shockwave-flash' allowfullscreen='true' allowscriptaccess='always'></embed>")
+            
+            balloon.append(player)
+        } else {
+            loader = $("<div class='loader'></div>")
+            loader.append("<img src='loader.gif' />")
+            loader.append("<p>Please wait...</p>")
+            
+            balloon.append(loader)
+        }
         
-        balloon.append(loader)
         
         balloon.addClass('token-' + token)
         
@@ -146,7 +157,12 @@ SciHub = {
             $('#connecting').hide()	
 
             //init ADD screen
-                        
+            
+            $().sleepyMongo({sleepyUrl:'/mongoose/scihub/videos/'}).find({}, function(data){
+                $(data.results).each(function() {
+                    Sail.app.createVideoBalloon('', this.url)
+                })
+            })
 
 
             id = ''
