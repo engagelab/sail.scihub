@@ -62,6 +62,8 @@ SciHub = {
         
         balloon.addClass('token-' + token)
         
+        balloon.append("<div id='playerContainer' style='width: 20em; height: 180px;'><object id=player'></object></div>")
+        
         //balloon.addClass('author-'+author.replace(/[^a-z0-9]/i, '-'))
         
         balloon.hide()
@@ -100,9 +102,9 @@ SciHub = {
         	got_google_client_token: function(sev) {
         		tokenURL = sev.payload.url
         		token = sev.payload.token
-                //$('#submission-form').attr('action', url+"?nexturl="+document.location.href)
         		nexturl = escape(document.location.href + '#token='+token)
-                $('#submission-form').get(0).setAttribute('action', tokenURL+"?nexturl="+nexturl);
+        		$('#submission-form').attr('action', tokenURL+"?nexturl="+nexturl)        		
+                //$('#submission-form').get(0).setAttribute('action', tokenURL+"?nexturl="+nexturl);
                 $('#token-value').val(token)
                 console.log(token)
                 console.log(tokenURL)
@@ -171,6 +173,7 @@ SciHub = {
             		status:status,
             		token:token
             	})
+            	Sail.app.createVideoBalloon(token)
             	SciHub.groupchat.sendEvent(sev)
             }
             
