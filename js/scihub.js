@@ -70,7 +70,7 @@ SciHub = {
         } else {
             loader = $("<div class='loader'></div>")
             loader.append("<img src='loader.gif' />")
-            loader.append("<p>Please wait...</p>")
+            loader.append("<p>Processing...</p>")
             
             balloon.append(loader)
         }

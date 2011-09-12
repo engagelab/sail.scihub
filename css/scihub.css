@@ -33,7 +33,7 @@
   background-color: rgba(256,256,256,0.7);
   box-shadow: rgba(0,0,128,0.25) 3px 3px 4px;
   
-  color: white;
+  color: black;
   font-size: 10pt;
   
   display: -webkit-box;
@@ -78,6 +78,7 @@
 
 .balloon .loader p {
   margin-top: 0;
+  color: #666;
 }
 
 .balloon.video {
