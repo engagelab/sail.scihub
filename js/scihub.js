@@ -55,7 +55,7 @@ SciHub = {
         player.append("<param name='movie' value='"+url+"'></param>")
         player.append("<param name='allowFullScreen' value='true'></param>")
         player.append("<param name='allowScriptAccess' value='always'></param>")
-        player.append("<embed src='"+url+"' type='application/x-shockwave-flash' allowfullscreen='true' allowscriptaccess='always'></embed>")
+        player.append("<embed class='player' src='"+url+"' type='application/x-shockwave-flash' allowfullscreen='true' allowscriptaccess='always'></embed>")
         
         return player
     },
