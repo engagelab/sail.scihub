@@ -109,6 +109,7 @@ function showAllVideos(data) {
 		<script type="text/javascript">
 		  function checkForFile() {
 		    if (document.getElementById('file').value) {
+		        Sail.Strophe.disconnect()
 		      return true;
 		    }
 		    document.getElementById('errMsg').style.display = '';
