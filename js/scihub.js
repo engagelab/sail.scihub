@@ -78,6 +78,13 @@ SciHub = {
         
         balloon.addClass('token-' + token)
         
+        balloon.mouseover(function() {
+            $(this).css({width: 360, height: 270})
+        })
+        
+        balloon.mouseout(function() {
+            $(this).css({width: 240, height: 180})
+        })
         
         //balloon.addClass('author-'+author.replace(/[^a-z0-9]/i, '-'))
         
