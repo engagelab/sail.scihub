@@ -73,7 +73,6 @@ SciHub = {
         
         balloon.addClass('token-' + token)
         
-        balloon.append("<div id='playerContainer' style='width: 20em; height: 180px;'><object id=player'></object></div>")
         
         //balloon.addClass('author-'+author.replace(/[^a-z0-9]/i, '-'))
         
@@ -168,17 +167,17 @@ SciHub = {
 
 
             id = ''
-            idMatch = document.location.href.match(/id=([^&]+)/)
+            idMatch = document.location.href.match(/id=([^&#]+)/)
             if (idMatch)
             	id = idMatch[1]
 
             status = ''
-            statusMatch = document.location.href.match(/status=([^&]+)/)
+            statusMatch = document.location.href.match(/status=([^&#]+)/)
             if (statusMatch)
             	status = statusMatch[1]
             
             token = ''
-            tokenMatch = document.location.href.match(/token=([^#]+)/)
+            tokenMatch = document.location.href.match(/token=([^&#]+)/)
             if (tokenMatch)
             	token = tokenMatch[1]
 
