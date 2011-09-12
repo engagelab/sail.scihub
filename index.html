@@ -92,25 +92,18 @@ function showAllVideos(data) {
         </div>
     </div>
     
-    <button class="upload-screen-button" disabled="disabled">Upload New Video</button>
+    <button class="upload-screen-button" style="display: none">Upload New Video</button>
     
 <!-- ************************************************************************************************** -->    
     
     
 	<div id="add" class="widget-box" style="display: none">
-	    <div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix" style="padding: 4px; margin-left: -5px; margin-right: -5px; margin-top: -5px">
+	    <div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix">
 	        <a href="#" class="ui-dialog-titlebar-close ui-corner-all" role="button" style="float: right">
 	           <span class="ui-icon ui-icon-closethick">close</span>
 	        </a>
 	        <span class="ui-dialog-title">Upload a New Video</span>
 	    </div>
-		
-		<div class="title-form-field"> 
-			<h5>Title</h5> 
-			<input type="" rows="1" cols="45" class="text-box title" />				
-		</div>
-		<br/>
-		<br/>
 
 <!-- TEMP: checks that user has browsed for and selected the file -->
 		<script type="text/javascript">
@@ -124,7 +117,13 @@ function showAllVideos(data) {
 		</script>
 		
 		<form id="submission-form" action="google.ca" method="post" enctype="multipart/form-data" onsubmit="return checkForFile();">
+			<div class="title-form-field"> 
+    			<h5>Title</h5> 
+    			<input type="" rows="1" cols="45" class="text-box title" />				
+    		</div>
+			
 			<input id="file" type="file" name="file"/>
+			
 		  	<div id="errMsg" style="display:none;color:red">
 		    	You need to specify a file.
 		  	</div>

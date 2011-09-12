@@ -28,7 +28,7 @@ SciHub = {
                     $('#connecting').show()
                     
                 })
-
+                
                 $(Sail.app).trigger('initialized')
                 return true
             })
@@ -119,8 +119,7 @@ SciHub = {
         
         connected: function(ev) {
             SciHub.groupchat.join()
-            $('#username').text(session.account.login)
-      	    $('#connecting').hide()						
+            $('#username').text(session.account.login)					
         	
             //init VIEW screen
             
@@ -130,10 +129,15 @@ SciHub = {
             	SciHub.groupchat.sendEvent(sev)
             	//$('#view').hide()
             	Sail.UI.showDialog("#add")
+            	$('#add .ui-dialog-titlebar-close')
+            	    .click(function() {Sail.UI.dismissDialog("#add")})
+            	    .mouseover(function() {$(this).addClass('ui-state-hover')})
+                    .mouseout(function() {$(this).removeClass('ui-state-hover')})
             })
             
-            $('.someElement').removeAttr('disabled');
+            $('.upload-screen-button').show('fade');
             
+            $('#connecting').hide()	
 
             //init ADD screen
                         
@@ -153,7 +157,7 @@ SciHub = {
         },        
 
         authenticated: function(ev) {
-            $('#connecting').hide()            
+                      
         },
         
         logout: function(ev) {
