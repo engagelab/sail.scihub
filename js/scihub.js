@@ -186,6 +186,15 @@ var SciHub = {
     
     events: {
         sail: {
+
+	    got_client_token: function(sev) {
+                var token = sev.payload.token;
+                
+                console.log(token);
+
+                Sail.app.createVideoBalloon(token);
+                console.log("video created");
+            },
             got_google_client_token: function(sev) {
                 var tokenURL = sev.payload.url;
                 var token = sev.payload.token;
