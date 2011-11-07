@@ -3,10 +3,10 @@
 <head> 
     <title>Science Hub</title> 
 
-    <link href="css/scihub.css" rel="stylesheet" type="text/css" /> 
     <link href="js/sail.js/css/sail.css" rel="stylesheet" type="text/css" />
     <link href="js/sail.js/css/jquery-ui/start/jquery-ui.css" rel="stylesheet" type="text/css" />
-
+    <link href="css/scihub.css" rel="stylesheet" type="text/css" />
+    
 <!-- //////////////////////// -->    
     <style>
 .titlec {
@@ -61,6 +61,7 @@ function showAllVideos(data) {
     <script type="text/javascript">
         Sail.load()
             .then('js/sail.js/rollcall.js')
+            .then('js/swfobject.js')
             .then('js/sail.js/deps/jquery-sleepy-mongoose-0.0.2.js')
             .then('js/scihub.js')
             .thenRun(function() { 
@@ -74,11 +75,6 @@ function showAllVideos(data) {
     </header>
     
     <div id="wall">
-    
-        <div id="connecting">
-            <img src="loader.gif" />
-            <p>Connecting...</p>
-        </div>
 
 <!-- ************************************************************************************************** -->
 
@@ -104,32 +100,20 @@ function showAllVideos(data) {
 	        </a>
 	        <span class="ui-dialog-title">Upload a New Video</span>
 	    </div>
-
-<!-- TEMP: checks that user has browsed for and selected the file -->
-		<script type="text/javascript">
-		  function checkForFile() {
-		    if (document.getElementById('file').value) {
-		        Sail.Strophe.disconnect()
-		      return true;
-		    }
-		    document.getElementById('errMsg').style.display = '';
-		    return false;
-		  }
-		</script>
 		
-		<form id="submission-form" action="" method="post" enctype="multipart/form-data" onsubmit="return checkForFile();">
-			<div class="title-form-field"> 
+		<form id="submission-form" action="" method="post" enctype="multipart/form-data">
+			<!--<div class="title-form-field"> 
     			<h5>Title</h5> 
     			<input type="" rows="1" cols="45" class="text-box title" />				
-    		</div>
+    		</div>-->
 			
-			<input id="file" type="file" name="file"/>
+			<input id="file" type="file" name="file" style="width: 100%" />
 			
 		  	<div id="errMsg" style="display:none;color:red">
 		    	You need to specify a file.
 		  	</div>
 			<input id="token-value" type="hidden" name="token" />
-			<input type="submit" value="Upload" >
+			<input type="submit" value="Upload" id="submit-upload" />
 		</form>
 
 

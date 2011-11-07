@@ -1,3 +1,11 @@
+header {
+  border-bottom: 3px dotted #444444;
+}
+
+body {
+  background-color: #000;
+}
+
 #connecting {
   position: absolute;
   top: 40%;
@@ -25,12 +33,13 @@
 
 .balloon {
   position: absolute;
-  padding: 20px;
+  padding: 10px;
   max-width: 40%;
   max-height: 80%;
   overflow: hidden;
   border-radius: 15px;
-  background-color: rgba(256,256,256,0.7);
+  /*background-color: rgba(256,256,256,0.7);*/
+  border: 3px dashed #444;
   box-shadow: rgba(0,0,128,0.25) 3px 3px 4px;
   
   color: black;
@@ -87,9 +96,10 @@
 }
 
 .upload-screen-button {
+  font-size: 14px;
   position: absolute !important;
-  right: 6px;
-  top: 60px;
+  right: 120px;
+  top: -45px;
 }
 
 #add {
@@ -131,4 +141,13 @@ object.player,
 embed.player {
   width: 100%;
   height: 100%;
+}
+
+.video-overlay {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  bottom: 8px;
+  left: 8px;
+  border-radius: 8px;
 }
