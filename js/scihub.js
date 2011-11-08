@@ -13,7 +13,7 @@ var SciHub = {
         Sail.app.run = JSON.parse($.cookie('run'));
         
         Sail.modules
-            .load('Rollcall.Authenticator', {mode: 'multi-picker'})
+            .load('Rollcall.Authenticator', {mode: 'picker'})
             .load('Strophe.AutoConnector')
             .load('AuthStatusWidget')
             .thenRun(function () {
