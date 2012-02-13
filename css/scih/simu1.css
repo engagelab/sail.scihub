@@ -1,0 +1,49 @@
+/************ Tags ************/
+#bkgSimu {
+	position: absolute;
+ 	top: 70px;
+ 	left: 20px;
+}
+
+#stepper {
+	position: absolute;
+ 	top: 160px;
+ 	left: 100px;
+}
+
+#enerIn {
+	position: absolute;
+ 	top: 440px;
+ 	left: 70px;
+}
+
+#coefQuestion {
+	padding: 5px;
+	border-width: thin;
+	border: white 1px solid;
+	position: absolute;
+ 	top: 250px;
+ 	left: 620px;
+ 	width: 110px;
+ 	font-weight: bolder;
+}
+
+#enerOut {
+	position: absolute;
+	color: #666666;
+ 	top: 250px;
+ 	left: 870px;
+ 	width: 110px;
+ 	font-weight: bolder;
+}
+
+.whiteText {
+	margin-left: 5px;
+	color: white;
+}
+
+#btn-nextSimu1 {
+	position: absolute;
+	top: 550px;
+	height: 20px;
+}

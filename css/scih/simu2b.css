@@ -1,0 +1,66 @@
+/* Individual cards and slots */
+#cardSlots div, #cardPile div {
+	position: absolute;
+	width: 40px;
+	height: 40px;
+	border: 2px dashed #333333;
+	-moz-border-radius: 20px;
+	-webkit-border-radius: 20px;
+	border-radius: 20px;
+	background: #fff;
+}
+
+#cardSlots div.hovered {
+	background: #aaa;
+}
+
+#cardPile div {
+	background: #FFF;
+}
+#cardPile div.ui-draggable-dragging {
+	border: 2px dashed #6fd;
+	-moz-box-shadow: 0 0 .5em rgba(0, 0, 0, .8);
+	-webkit-box-shadow: 0 0 .5em rgba(0, 0, 0, .8);
+	box-shadow: 0 0 .5em rgba(0, 0, 0, .8);
+}
+#card1 {
+	top: 60px;
+	left: 550px;
+}
+#card2 {
+	top: 140px;
+	left: 550px;
+}
+#card3 {
+	top: 220px;
+	left: 550px;
+}
+#drop1 {
+	border-style: dashed;
+	top: 150px;
+	left: 140px;
+}
+#drop2 {
+	border-style: dashed;
+	top: 120px;
+	left: 230px;
+}
+#drop3 {
+	border-style: dashed;
+	top: 260px;
+	left: 320px;
+}
+/* Individually coloured cards */
+#card1.correct {
+	/* background: red; */
+	border: 2px dashed #FF0000;
+}
+#card2.correct {
+	/* background: red; */
+	border: 2px dashed #FF0000;
+}
+#card3.correct {
+	/* background: red; */
+	border: 2px dashed #FF0000;
+}
+

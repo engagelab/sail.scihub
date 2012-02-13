@@ -1,153 +1,42 @@
-header {
-  border-bottom: 3px dotted #444444;
-}
-
 body {
-  background-color: #000;
+	background: #c0c0c0;
+	padding: 0;
+	margin: 0 auto;
 }
 
-#connecting {
-  position: absolute;
-  top: 40%;
-  left: 40%;
-  right: 40%;
-  text-align: center;
-  font-weight: bold;
-  padding-top: 1em;
-  padding-bottom: 1em;
+header {
+	height: 60px;
+	display: block;
+	background: white;
+	-webkit-box-shadow: 0px 2px 5px gray;
+	-moz-box-shadow: 0px 2px 5px gray;
+	box-shadow: 0px 2px 5px gray;
+	text-align: left;
 }
 
-#youtube-uploader {
-  width: 500px;
-  height: 500px;
-  position: absolute;
+h1 {
+	display: inline;
+	color: #333333;
 }
 
-#wall {
-  position: absolute;
-  left: 0px;
-  right: 0px;
-  top: 50px;
-  bottom: 0px;
+#scene-picker {
+	position:relative; 
+	margin: 0 auto;
+	width:800px; 
+	top: 200px;
 }
 
-.balloon {
-  position: absolute;
-  padding: 10px;
-  max-width: 40%;
-  max-height: 80%;
-  overflow: hidden;
-  border-radius: 15px;
-  /*background-color: rgba(256,256,256,0.7);*/
-  border: 3px dashed #444;
-  box-shadow: rgba(0,0,128,0.25) 3px 3px 4px;
-  
-  color: black;
-  font-size: 10pt;
-  
-  display: -webkit-box;
-  -webkit-box-orient: horizontal;
-  -webkit-box-pack: center;
-  -webkit-box-align: center;
-  
-  display: -moz-box;
-  -moz-box-orient: horizontal;
-  -moz-box-pack: center;
-  -moz-box-align: center;
-  
-  display: box;
-  box-orient: horizontal;
-  box-pack: center;
-  box-align: center;
+.scene-picker-ui {
+	float: left;
+	border: 1px dashed #333333;
+	width: 200px;
+	margin: 0px 5px 0px 5px; 
+	text-align: center;
+	vertical-align: middle;
 }
 
-.balloon .loader {
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-box-pack: center;
-  -webkit-box-align: center;
-  
-  display: -moz-box;
-  -moz-box-orient: vertical;
-  -moz-box-pack: center;
-  -moz-box-align: center;
-  
-  display: box;
-  box-orient: vertical;
-  box-pack: center;
-  box-align: center;
-  
-  height: 100%;
-  width: 100%;
-}
-
-.balloon:hover {
-  cursor: pointer;
-}
-
-.balloon .loader p {
-  margin-top: 0;
-  color: #666;
-}
-
-.balloon.video {
-  width: 220px;
-  height: 180px;
-}
-
-.upload-screen-button {
-  font-size: 14px;
-  position: absolute !important;
-  right: 120px;
-  top: -45px;
-}
-
-#add {
-  background: #bbb;
-  padding-left: 20px;
-  padding-right: 20px;
-  position: absolute;
-  top: 20%;
-  left: 30%;
-  right: 30%;
-  padding: 10px;
-}
-
-#add .ui-dialog-titlebar {
-  padding: 4px; 
-  margin-left: -5px; 
-  margin-right: -5px; 
-  margin-top: -5px
-  margin-bottom: -10px;
-}
-
-#add input {
-  width: 100%;
-}
-
-#add h5 {
-  margin-bottom: 0;
-}
-
-#add .title-form-field {
-  margin-bottom: 0.5em;
-}
-
-#add input[type=file] {
-  margin-bottom: 1.5em;
-}
-
-object.player,
-embed.player {
-  width: 100%;
-  height: 100%;
-}
-
-.video-overlay {
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  bottom: 8px;
-  left: 8px;
-  border-radius: 8px;
+.scene-picker-ui:hover {
+	border: 1px solid #333333;
+	background-color: #666666;
+	color: #FFFFFF;
 }

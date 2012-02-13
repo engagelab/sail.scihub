@@ -1,0 +1,42 @@
+.newPI {
+	float: left;
+}
+
+.delete {
+	float: right;
+}
+
+.toolbar {
+	cursor: move;
+	background: #FFCC00;
+}
+
+.postick {
+	border: 1px solid gray;
+	width: 200px;
+	height: 200px;
+	padding: 4px;
+	font-size: 85%;
+	background: #FFFC7F;
+	-moz-box-shadow: 2px 2px 2px #999999;
+	-webkit-box-shadow: 2px 2px 2px #999999;
+	box-shadow: 2px 2px 2px #999999;
+	position: absolute;
+	z-index: 10;
+}
+
+.editable {
+	resize: none;
+	cursor: pointer;
+	height: 160px;
+	width: 100%;
+	overflow: hidden;
+	position: relative;
+	-moz-text-shadow: 1px 1px 0px white;
+	text-shadow: 1px 1px 0px white;
+}
+
+.editable:hover {
+	border: 1px dotted blue;
+}
+

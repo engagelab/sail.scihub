@@ -1,125 +1,43 @@
-<!DOCTYPE html> 
-<html> 
-<head> 
-    <title>Science Hub</title> 
-
-    <link href="js/sail.js/css/sail.css" rel="stylesheet" type="text/css" />
-    <link href="js/sail.js/css/jquery-ui/start/jquery-ui.css" rel="stylesheet" type="text/css" />
-    <link href="css/scihub.css" rel="stylesheet" type="text/css" />
-    
-<!-- //////////////////////// -->    
-    <style>
-.titlec {
-  font-size: small;
-}
-ul.videos li {
-  float: left;
-  width: 10em;
-  margin-bottom: 1em;
-}
-ul.videos
-{
-  margin-bottom: 1em;
-  padding-left : 0em;
-  margin-left: 0em;
-  list-style: none;
-}
-</style>
-<script type="text/javascript" src="http://swfobject.googlecode.com/svn/trunk/swfobject/swfobject.js"></script>
-<script type="text/javascript">
-function loadVideo(playerUrl, autoplay) {
-  swfobject.embedSWF(
-      playerUrl + '&rel=1&border=0&fs=1&autoplay=' + 
-      (autoplay?1:0), 'player', '290', '250', '9.0.0', false, 
-      false, {allowfullscreen: 'true'});
-}
-
-function showAllVideos(data) {
-  var feed = data.feed;
-  var entries = feed.entry || [];
-  var html = ['<ul class="videos">'];
-  for (var i = 0; i < entries.length; i++) {
-    var entry = entries[i];
-    var title = entry.title.$t.substr(0, 20);
-    var thumbnailUrl = entries[i].media$group.media$thumbnail[0].url;
-    var playerUrl = entries[i].media$group.media$content[0].url;
-    html.push('<li onclick="loadVideo(\'', playerUrl, '\', true)">',
-              '<span class="titlec">', title, '...</span><br /><img src="', 
-              thumbnailUrl, '" width="130" height="97"/>', '</span></li>');
-  }
-  html.push('</ul><br style="clear: left;"/>');
-  document.getElementById('videos').innerHTML = html.join('');
-  if (entries.length > 0) {
-    loadVideo(entries[0].media$group.media$content[0].url, false);
-  }
-}
-</script>
-<!-- //////////////////////// -->
-    
-    <script src="js/sail.js/sail.js" type="text/javascript"></script> 
-    
-    <script type="text/javascript">
-        Sail.load()
-            .then('js/sail.js/rollcall.js')
-            .then('js/swfobject.js')
-            .then('js/sail.js/deps/jquery-sleepy-mongoose-0.0.2.js')
-            .then('js/scihub.js')
-            .thenRun(function() { 
-                return Sail.init(SciHub) 
-            })
-    </script>
-</head>
-<body>
-    <header>
-        <h1>SciHub</h1>
-    </header>
-    
-    <div id="wall">
-
-<!-- ************************************************************************************************** -->
-
-    <div id="player">
-        <div id="playerContainer" style="width: 20em; height: 180px;">
-            <object id="player"></object>
-        </div>    
-        
-         <div id="videos">
-           <script type="text/javascript" ></script>
-        </div>
-    </div>
-<!--    
-	    <button class="upload-screen-button" style="display: none">Upload New Videodfdfd</button>
--->
-<!-- ************************************************************************************************** -->    
-    
-    <!--
-	<div id="add" class="widget-box" style="display: none">
-	    <div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix">
-	        <a href="#" class="ui-dialog-titlebar-close ui-corner-all" role="button" style="float: right">
-	           <span class="ui-icon ui-icon-closethick">close</span>
-	        </a>
-	        <span class="ui-dialog-title">Upload a New Video</span>
-	    </div>
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Science Hub</title>
 		
-		<form id="submission-form" action="" method="post" enctype="multipart/form-data">
-			
-			
-			<input id="file" type="file" name="file" style="width: 100%" />
-			
-		  	<div id="errMsg" style="display:none;color:red">
-		    	You need to specify a file.
-		  	</div>
-			<input id="token-value" type="hidden" name="token" />
-			<input type="submit" value="Upload" id="submit-upload" />
-		</form>
-	</div>
-	-->
-
-
-    </div> <!-- /wall -->
-
-    <footer> 
-    </footer> 
-      
-</body>
+		<!-- <link href="js/sail.js/css/sail.css" rel="stylesheet" type="text/css" /> -->
+		<link href="css/scihub.css" rel="stylesheet" type="text/css" />
+		
+		<link rel="stylesheet" rev="stylesheet" href="css/scih/post-it.css">
+		
+		<script src="js/scih/jquery-1.7.1.js"></script>
+		<script src="js/scih/jquery-ui.min.js"></script>
+		<script src="js/scih/jquery.ui.mouse.touch.js"></script>
+		
+		<script src="js/sail.js/sail.js" type="text/javascript"></script>
+		<script type="text/javascript">
+			Sail.load().then('js/sail.js/rollcall.js').then('js/swfobject.js').then('js/sail.js/deps/jquery-sleepy-mongoose-0.0.2.js').then('js/scihub.js').thenRun(function() {
+				return Sail.init(SciHub)
+			})
+		</script>
+	</head>
+	<body>
+		<header>
+			<h1>Science Hub</h1>
+			<br />
+			<input type="button" class="newPI" value="new post-it" id="btn-addNote" />
+			<span>yoyo</span>
+		</header>
+		
+		<div id="scene-picker">
+			<div class="scene-picker-ui"><p>simulations</p></div>
+			<div class="scene-picker-ui"><p>???????????</p></div>
+			<div class="scene-picker-ui"><p>???????????</p></div>
+		</div>
+		
+		<div id="simulations" />
+		
+		<div id="board" width="100%" height="100%"></div>
+		<script type="text/javascript" src="js/scih/post-it.js"></script>
+		
+		<footer></footer>
+	</body>
 </html>
